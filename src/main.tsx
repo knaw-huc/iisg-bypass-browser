@@ -17,13 +17,6 @@ const getVar = (envVariable: string): string | undefined =>
         ? (envVariable.slice(1) in import.meta.env ? import.meta.env[envVariable.slice(1)] : undefined)
         : envVariable;
 
-if (window.location.pathname === '/') {
-    const dataset = getVar(panoptesDataset);
-    const searchPath = getVar(panoptesSearchPath);
-    const target = searchPath?.replace('$dataset', dataset ?? '') ?? `/${dataset}${searchPath}`;
-    window.location.replace(target);
-}
-
 const root = createPanoptesRoot(document.getElementById('root')!, {
     url: getVar(panoptesUrl),
     isEmbedded: getVar(panoptesIsEmbedded) === 'true',
