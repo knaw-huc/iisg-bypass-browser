@@ -12,7 +12,7 @@ A React-based front-end for browsing IISG Bypass collections via the [Panoptes](
 1. Copy the example environment and adjust as needed:
 
    ```sh
-   cp .env.example.example .env.example   # or edit .env.example directly
+   cp .env.example .env   # or edit .env.example directly
    ```
 
 2. Install dependencies and start the dev server:
