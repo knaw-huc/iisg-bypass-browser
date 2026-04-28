@@ -1,9 +1,10 @@
 import {createPanoptesRoot, PanoptesRouterProvider} from "@knaw-huc/panoptes-react";
+import {panoptesBlocksLibrary} from "@knaw-huc/panoptes-react-blocks";
 import {createTranslate} from "./i18n/i18n.ts";
 import '@knaw-huc/panoptes-react/style.css';
+import '@knaw-huc/panoptes-react-blocks/style.css';
 import './css/theme.css'
 import './css/index.css'
-
 
 const panoptesUrl = '$VITE_PANOPTES_URL';
 const panoptesIsEmbedded = '$VITE_PANOPTES_IS_EMBEDDED';
@@ -15,7 +16,6 @@ const getVar = (envVariable: string): string | undefined =>
     envVariable.startsWith('$VITE_')
         ? (envVariable.slice(1) in import.meta.env ? import.meta.env[envVariable.slice(1)] : undefined)
         : envVariable;
-
 
 if (window.location.pathname === '/') {
     const dataset = getVar(panoptesDataset);
@@ -31,7 +31,6 @@ const root = createPanoptesRoot(document.getElementById('root')!, {
     detailPath: getVar(panoptesDetailPath),
     dataset: getVar(panoptesDataset),
     translateFn: createTranslate(),
-    blocks: new Map([
-    ])
+    blocks: panoptesBlocksLibrary
 });
 root.render(<PanoptesRouterProvider/>);
