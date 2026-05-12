@@ -1,0 +1,273 @@
+{
+  "id": "bypass-item-view",
+  "label": "PAPA Amsterdam ZUID Collection",
+  "screenType": "normal",
+  "tabs": [
+    {
+      "id": "file"
+    }
+  ],
+  "links": [
+  ],
+  "actions": [
+    {
+      "id": "save-changes",
+      "confirmation": {
+        "askConfirmation": "never"
+      },
+      "activate": "always",
+      "operation": {
+        "operationId": "saveItemChanges",
+        "parameters": {
+        }
+      }
+    },
+    {
+      "id": "revert",
+      "confirmation": {
+        "askConfirmation": "never"
+      },
+      "activate": "always",
+      "operation": {
+        "operationId": "revertChanges",
+        "parameters": {
+        }
+      }
+    },
+    {
+      "id": "download",
+      "confirmation": {
+        "askConfirmation": "never"
+      },
+      "activate": "always",
+      "operation": {
+        "operationId": "downloadItem",
+        "parameters": {
+        }
+      }
+    },
+    {
+      "id": "export-metadata",
+      "confirmation": {
+        "askConfirmation": "never"
+      },
+      "activate": "always",
+      "operation": {
+        "operationId": "exportMetadata",
+        "parameters": {
+        }
+      }
+    },
+    {
+      "id": "share",
+      "confirmation": {
+        "askConfirmation": "never"
+      },
+      "activate": "always",
+      "operation": {
+        "operationId": "share",
+        "parameters": {
+        }
+      }
+    }
+  ],
+  "form": {
+    "rows": [
+      {
+        "displayType": "group",
+        "groupId": "preview",
+        "collapsible": true,
+        "defaultCollapsed": false,
+        "elements": [
+          {
+            "type": "file-preview",
+            "value": {
+              "contentType": "$data#$.metadata.Content-Type",
+              "title": "$data#$.metadata.title"
+            }
+          }
+        ]
+      },
+      {
+        "displayType": "group",
+        "groupId": "summary",
+        "collapsible": true,
+        "defaultCollapsed": false,
+        "elements": [
+          {
+            "type": "label",
+            "value": "$data#$.collection"
+          },
+          {
+            "type": "label",
+            "value": "$data#$.metadata.title"
+          },
+          {
+            "type": "label",
+            "value": "$data#$.metadata.description"
+          },
+          {
+            "type": "label",
+            "value": "$data#$.metadata.creator"
+          },
+          {
+            "type": "label",
+            "value": "$data#$.metadata.producer"
+          },
+          {
+            "type": "label",
+            "value": "$data#$.metadata.publisher"
+          },
+          {
+            "type": "label",
+            "value": "$data#$.metadata['dc:language']"
+          },
+          {
+            "type": "label",
+            "value": "$data#$.metadata.created"
+          },
+          {
+            "type": "label",
+            "value": "$data#$.metadata.repository"
+          },
+          {
+            "type": "tags",
+            "value": "$data#$.metadata.subject"
+          }
+        ]
+      },
+      {
+        "displayType": "group",
+        "groupId": "rights-and-access",
+        "collapsible": true,
+        "defaultCollapsed": false,
+        "elements": [
+          {
+            "type": "label",
+            "value": "$data#$.metadata['dc:rights']"
+          },
+          {
+            "type": "label",
+            "value": "$data#$.metadata['dc:source']"
+          },
+          {
+            "type": "label",
+            "value": "$data#$.metadata.accessLevel"
+          },
+          {
+            "type": "label",
+            "value": "$data#$.metadata.usageRights"
+          }
+        ]
+      },
+      {
+        "displayType": "group",
+        "groupId": "geographic-information",
+        "rows": [
+          {
+            "columns": [
+              {
+                "elements": [
+                  {
+                    "type": "label",
+                    "value": "$data#$.metadata.coordinates.lat"
+                  }
+                ]
+              },
+              {
+                "elements": [
+                  {
+                    "type": "label",
+                    "value": "$data#$.metadata.coordinates.lon"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "elements": [
+              {
+                "type": "map",
+                "value": {
+                  "latitude": "$data#$.metadata.coordinates.lat",
+                  "longitude": "$data#$.metadata.coordinates.lon"
+                },
+                "config": {
+                  "zoom": new NumberInt("6")
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "displayType": "group",
+        "groupId": "technical-metadata",
+        "collapsible": true,
+        "defaultCollapsed": false,
+        "rows": [
+          {
+            "columns": [
+              {
+                "elements": [
+                  {
+                    "type": "label",
+                    "value": "$data#$.metadata.Content-Type"
+                  }
+                ]
+              },
+              {
+                "elements": [
+                  {
+                    "type": "label",
+                    "value": "$data#$.metadata.Content-Length"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "elements": [
+                  {
+                    "type": "label",
+                    "value": "$data#$.metadata.dimensions"
+                  }
+                ]
+              },
+              {
+                "elements": [
+                  {
+                    "type": "label",
+                    "value": "$data#$.metadata.colorProfile"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "elements": [
+                  {
+                    "type": "label",
+                    "value": "$data#$.metadata.resolution"
+                  }
+                ]
+              },
+              {
+                "elements": [
+                  {
+                    "type": "label",
+                    "value": "$data#$.metadata.language"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
