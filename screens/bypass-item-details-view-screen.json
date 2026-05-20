@@ -215,7 +215,7 @@
         "defaultCollapsed": false,
         "visibleWhen": {
           "binding": "$data#$.metadata.Content-Type",
-          "matches": "^application/(pdf|vnd|msword.*)$"
+          "matches": "^application\/(pdf|vnd|msword).*$"
         },
         "elements": [
           {
