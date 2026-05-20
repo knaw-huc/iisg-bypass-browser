@@ -1,6 +1,5 @@
 {
   "id": "bypass-item-view",
-  "label": "PAPA Amsterdam ZUID Collection",
   "screenType": "normal",
   "tabs": [
     {
@@ -10,66 +9,6 @@
   "links": [
   ],
   "actions": [
-    {
-      "id": "save-changes",
-      "confirmation": {
-        "askConfirmation": "never"
-      },
-      "activate": "always",
-      "operation": {
-        "operationId": "saveItemChanges",
-        "parameters": {
-        }
-      }
-    },
-    {
-      "id": "revert",
-      "confirmation": {
-        "askConfirmation": "never"
-      },
-      "activate": "always",
-      "operation": {
-        "operationId": "revertChanges",
-        "parameters": {
-        }
-      }
-    },
-    {
-      "id": "download",
-      "confirmation": {
-        "askConfirmation": "never"
-      },
-      "activate": "always",
-      "operation": {
-        "operationId": "downloadItem",
-        "parameters": {
-        }
-      }
-    },
-    {
-      "id": "export-metadata",
-      "confirmation": {
-        "askConfirmation": "never"
-      },
-      "activate": "always",
-      "operation": {
-        "operationId": "exportMetadata",
-        "parameters": {
-        }
-      }
-    },
-    {
-      "id": "share",
-      "confirmation": {
-        "askConfirmation": "never"
-      },
-      "activate": "always",
-      "operation": {
-        "operationId": "share",
-        "parameters": {
-        }
-      }
-    }
   ],
   "form": {
     "rows": [
@@ -80,11 +19,8 @@
         "defaultCollapsed": false,
         "elements": [
           {
-            "type": "file-preview",
-            "value": {
-              "contentType": "$data#$.metadata.Content-Type",
-              "title": "$data#$.metadata.title"
-            }
+            "type": "label",
+            "value": "$data#$.metadata.Content-Type"
           }
         ]
       },
@@ -97,6 +33,10 @@
           {
             "type": "label",
             "value": "$data#$.collection"
+          },
+          {
+            "type": "json",
+            "value": "$data#$.metadata.resourceName"
           },
           {
             "type": "label",
@@ -128,6 +68,10 @@
           },
           {
             "type": "label",
+            "value": "$data#$.metadata.modified"
+          },
+          {
+            "type": "label",
             "value": "$data#$.metadata.repository"
           },
           {
@@ -149,14 +93,6 @@
           {
             "type": "label",
             "value": "$data#$.metadata['dc:source']"
-          },
-          {
-            "type": "label",
-            "value": "$data#$.metadata.accessLevel"
-          },
-          {
-            "type": "label",
-            "value": "$data#$.metadata.usageRights"
           }
         ]
       },
@@ -193,7 +129,7 @@
                   "longitude": "$data#$.metadata.coordinates.lon"
                 },
                 "config": {
-                  "zoom": new NumberInt("6")
+                  "zoom": 6
                 }
               }
             ]
@@ -202,9 +138,13 @@
       },
       {
         "displayType": "group",
-        "groupId": "technical-metadata",
+        "groupId": "image-metadata",
         "collapsible": true,
         "defaultCollapsed": false,
+        "visibleWhen": {
+          "binding": "$data#$.metadata.Content-Type",
+          "startsWith": "image/"
+        },
         "rows": [
           {
             "columns": [
@@ -265,6 +205,98 @@
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "displayType": "group",
+        "groupId": "document-metadata",
+        "collapsible": true,
+        "defaultCollapsed": false,
+        "visibleWhen": {
+          "binding": "$data#$.metadata.Content-Type",
+          "matches": "^application\/(pdf|vnd|msword).*$"
+        },
+        "elements": [
+          {
+            "type": "label",
+            "value": "$data#$.metadata['word-count']"
+          },
+          {
+            "type": "label",
+            "value": "$data#$.metadata['meta:page-count']"
+          },
+          {
+            "type": "label",
+            "value": "$data#$.metadata['meta:character-count']"
+          },
+          {
+            "type": "label",
+            "value": "$data#$.metadata['total-time']"
+          },
+          {
+            "type": "label",
+            "value": "$data#$.metadata['cp:revision']"
+          },
+          {
+            "type": "label",
+            "value": "$data#$.metadata['extended-properties:Company']"
+          },
+          {
+            "type": "label",
+            "value": "$data#$.metadata['meta:last-author']"
+          },
+          {
+            "type": "label",
+            "value": "$data#$.metadata.producer"
+          },
+          {
+            "type": "label",
+            "value": "$data#$.metadata['creator-tool']"
+          }
+        ]
+      },
+      {
+        "displayType": "group",
+        "groupId": "email-metadata",
+        "collapsible": true,
+        "defaultCollapsed": false,
+        "visibleWhen": {
+          "binding": "$data#$.metadata.Content-Type",
+          "startsWith": "message/"
+        },
+        "elements": [
+          {
+            "type": "label",
+            "value": "$data#$.metadata['Message:From']"
+          },
+          {
+            "type": "label",
+            "value": "$data#$.metadata['Message:From-Name']"
+          },
+          {
+            "type": "label",
+            "value": "$data#$.metadata['Message-To']"
+          },
+          {
+            "type": "label",
+            "value": "$data#$.metadata['Message-Cc']"
+          },
+          {
+            "type": "label",
+            "value": "$data#$.metadata['Message:Raw-Header:Organization']"
+          },
+          {
+            "type": "label",
+            "value": "$data#$.metadata['Message:Raw-Header:Reply-to']"
+          },
+          {
+            "type": "label",
+            "value": "$data#$.metadata['Message:Raw-Header:X-Confirm-Reading-To']"
+          },
+          {
+            "type": "label",
+            "value": "$data#$.metadata['Content-Disposition']"
           }
         ]
       }
