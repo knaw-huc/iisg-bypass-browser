@@ -29,6 +29,15 @@
 
   "screens.bypass-item-view": "Itemgegevens",
 
+  "screens.bypass-item-view.actions.export-metadata": "Exporteer metadata",
+  "screens.bypass-item-view.actions.export-metadata.ris": "RIS",
+  "screens.bypass-item-view.actions.export-metadata.marc21": "MARC21 Exchange",
+
+  "screens.bypass-item-view.tabs.tab-file": "Bestand",
+  "screens.bypass-item-view.tabs.tab-file-history": "Bestandsgeschiedenis",
+  "screens.bypass-item-view.tabs.tab-metadata": "Metadata",
+  "screens.bypass-item-view.tabs.tab-related-files": "Gerelateerde bestanden",
+
   "screens.bypass-item-view.preview": "Bestandsweergave",
   "screens.bypass-item-view.preview.avif.avif_url": "",
   "screens.bypass-item-view.preview.avif.avif_url.info": "",
