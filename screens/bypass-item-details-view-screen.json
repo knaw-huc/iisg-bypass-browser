@@ -3,7 +3,16 @@
   "screenType": "normal",
   "tabs": [
     {
-      "id": "file"
+      "id": "tab-file"
+    },
+    {
+      "id": "tab-file-history"
+    },
+    {
+      "id": "tab-metadata"
+    },
+    {
+      "id": "tab-related-files"
     }
   ],
   "links": [
@@ -15,8 +24,7 @@
       {
         "displayType": "group",
         "groupId": "preview",
-        "collapsible": true,
-        "defaultCollapsed": false,
+        "tabId": "tab-file",
         "elements": [
           {
             "type": "label",
@@ -27,8 +35,7 @@
       {
         "displayType": "group",
         "groupId": "summary",
-        "collapsible": true,
-        "defaultCollapsed": false,
+        "tabId": "tab-file",
         "elements": [
           {
             "type": "label",
@@ -83,8 +90,7 @@
       {
         "displayType": "group",
         "groupId": "rights-and-access",
-        "collapsible": true,
-        "defaultCollapsed": false,
+        "tabId": "tab-file",
         "elements": [
           {
             "type": "label",
@@ -99,6 +105,7 @@
       {
         "displayType": "group",
         "groupId": "geographic-information",
+        "tabId": "tab-file",
         "rows": [
           {
             "columns": [
@@ -129,7 +136,7 @@
                   "longitude": "$data#$.metadata.coordinates.lon"
                 },
                 "config": {
-                  "zoom": 6
+                  "zoom": new NumberInt("6")
                 }
               }
             ]
@@ -139,8 +146,7 @@
       {
         "displayType": "group",
         "groupId": "image-metadata",
-        "collapsible": true,
-        "defaultCollapsed": false,
+        "tabId": "tab-metadata",
         "visibleWhen": {
           "binding": "$data#$.metadata.Content-Type",
           "startsWith": "image/"
@@ -211,11 +217,10 @@
       {
         "displayType": "group",
         "groupId": "document-metadata",
-        "collapsible": true,
-        "defaultCollapsed": false,
+        "tabId": "tab-metadata",
         "visibleWhen": {
           "binding": "$data#$.metadata.Content-Type",
-          "matches": "^application\/(pdf|vnd|msword).*$"
+          "startsWith": "^application/"
         },
         "elements": [
           {
@@ -259,8 +264,7 @@
       {
         "displayType": "group",
         "groupId": "email-metadata",
-        "collapsible": true,
-        "defaultCollapsed": false,
+        "tabId": "tab-metadata",
         "visibleWhen": {
           "binding": "$data#$.metadata.Content-Type",
           "startsWith": "message/"

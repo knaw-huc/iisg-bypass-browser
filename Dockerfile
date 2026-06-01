@@ -9,9 +9,9 @@ COPY . .
 RUN npm run build
 
 FROM nginx:1.29.1-alpine AS runtime
-COPY conf/nginx.conf /etc/nginx/conf.d/default.conf
+COPY deployment/nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /app/dist /usr/share/nginx/html
-COPY conf/entrypoint.sh /entrypoint.sh
+COPY deployment/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 EXPOSE 80

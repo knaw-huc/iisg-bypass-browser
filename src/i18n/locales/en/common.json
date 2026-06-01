@@ -29,6 +29,15 @@
 
   "screens.bypass-item-view": "Item details",
 
+  "screens.bypass-item-view.actions.export-metadata": "Export metadata",
+  "screens.bypass-item-view.actions.export-metadata.ris": "RIS",
+  "screens.bypass-item-view.actions.export-metadata.marc21": "MARC21 Exchange",
+
+  "screens.bypass-item-view.tabs.tab-file": "File",
+  "screens.bypass-item-view.tabs.tab-file-history": "File history",
+  "screens.bypass-item-view.tabs.tab-metadata": "Metadata",
+  "screens.bypass-item-view.tabs.tab-related-files": "Related files",
+
   "screens.bypass-item-view.preview": "File preview",
   "screens.bypass-item-view.preview.metadata.Content-Type": "Content type",
   "screens.bypass-item-view.preview.metadata.Content-Type.info": "",
@@ -50,6 +59,8 @@
   "screens.bypass-item-view.summary.metadata.publisher.info": "",
   "screens.bypass-item-view.summary.metadata.dc_language": "Language",
   "screens.bypass-item-view.summary.metadata.dc_language.info": "",
+  "screens.bypass-item-view.rights-and-access.metadata.dc_source": "Source",
+  "screens.bypass-item-view.rights-and-access.metadata.dc_source.info": "",
   "screens.bypass-item-view.summary.metadata.description": "Description",
   "screens.bypass-item-view.summary.metadata.description.info": "",
   "screens.bypass-item-view.summary.metadata.created": "Date created",
