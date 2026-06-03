@@ -27,6 +27,18 @@
   "panoptes.noValue": "No value",
   "panoptes.mainSiteNavigation": "Main site navigation",
 
+  "iisg-bypass.pages.home": "Home",
+  "iisg-bypass.pages.search": "Search",
+  "iisg-bypass.pages.datasets": "Datasets",
+  "iisg-bypass.pages.about": "About",
+
+  "iisg-bypass.pages.home.institution": "International Institute of Social History",
+  "iisg-bypass.pages.home.title": "IISG Bypass Collections",
+  "iisg-bypass.pages.home.description": "Explore digitised holdings spanning labour movements, personal papers, photo collections, oral histories, and more.",
+
+  "iisg-bypass.searchDataset": "Search this dataset",
+  "iisg-bypass.moreInfo": "More info",
+
   "screens.bypass-item-view": "Item details",
 
   "screens.bypass-item-view.actions.export-metadata": "Export metadata",

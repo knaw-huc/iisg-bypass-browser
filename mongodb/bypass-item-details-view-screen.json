@@ -18,6 +18,17 @@
   "links": [
   ],
   "actions": [
+    {
+      "id": "export-metadata",
+      "activate": "always",
+      "confirmation": {
+        "askConfirmation": "never"
+      },
+      "block": {
+        "type": "export-metadata-action-button",
+        "value": null
+      }
+    }
   ],
   "form": {
     "rows": [
@@ -136,7 +147,7 @@
                   "longitude": "$data#$.metadata.coordinates.lon"
                 },
                 "config": {
-                  "zoom": new NumberInt("6")
+                  "zoom": 6
                 }
               }
             ]

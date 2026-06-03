@@ -1,0 +1,160 @@
+const TENANT_DB = "bypass";
+const DATASET_NAME = "{dataset_name}";
+
+const tenantDb = db.getSiblingDB(TENANT_DB);
+tenantDb.detail_properties.updateOne(
+    { dataset_name: DATASET_NAME, name: "bypass-item-view" },
+    {
+        $set: {
+            dataset_name: DATASET_NAME,
+            name: "bypass-item-view",
+            type: "screen",
+            path: "$",
+            order: 1,
+            config: {
+                "id": "bypass-item-view",
+                "screenType": "normal",
+                "tabs": [
+                    { "id": "tab-file" },
+                    { "id": "tab-file-history" },
+                    { "id": "tab-metadata" },
+                    { "id": "tab-related-files" }
+                ],
+                "links": [],
+                "actions": [
+                    {
+                        "id": "export-metadata",
+                        "activate": "always",
+                        "confirmation": { "askConfirmation": "never" },
+                        "block": { "type": "export-metadata-action-button", "value": null }
+                    }
+                ],
+                "form": {
+                    "rows": [
+                        {
+                            "displayType": "group",
+                            "groupId": "preview",
+                            "tabId": "tab-file",
+                            "elements": [
+                                { "type": "label", "value": "$data#$.metadata.Content-Type" }
+                            ]
+                        },
+                        {
+                            "displayType": "group",
+                            "groupId": "summary",
+                            "tabId": "tab-file",
+                            "elements": [
+                                { "type": "label", "value": "$data#$.collection" },
+                                { "type": "json",  "value": "$data#$.metadata.resourceName" },
+                                { "type": "label", "value": "$data#$.metadata.title" },
+                                { "type": "label", "value": "$data#$.metadata.description" },
+                                { "type": "label", "value": "$data#$.metadata.creator" },
+                                { "type": "label", "value": "$data#$.metadata.producer" },
+                                { "type": "label", "value": "$data#$.metadata.publisher" },
+                                { "type": "label", "value": "$data#$.metadata['dc:language']" },
+                                { "type": "label", "value": "$data#$.metadata.created" },
+                                { "type": "label", "value": "$data#$.metadata.modified" },
+                                { "type": "label", "value": "$data#$.metadata.repository" },
+                                { "type": "tags",  "value": "$data#$.metadata.subject" }
+                            ]
+                        },
+                        {
+                            "displayType": "group",
+                            "groupId": "rights-and-access",
+                            "tabId": "tab-file",
+                            "elements": [
+                                { "type": "label", "value": "$data#$.metadata['dc:rights']" },
+                                { "type": "label", "value": "$data#$.metadata['dc:source']" }
+                            ]
+                        },
+                        {
+                            "displayType": "group",
+                            "groupId": "geographic-information",
+                            "tabId": "tab-file",
+                            "rows": [
+                                {
+                                    "columns": [
+                                        { "elements": [{ "type": "label", "value": "$data#$.metadata.coordinates.lat" }] },
+                                        { "elements": [{ "type": "label", "value": "$data#$.metadata.coordinates.lon" }] }
+                                    ]
+                                },
+                                {
+                                    "elements": [
+                                        {
+                                            "type": "map",
+                                            "value": {
+                                                "latitude": "$data#$.metadata.coordinates.lat",
+                                                "longitude": "$data#$.metadata.coordinates.lon"
+                                            },
+                                            "config": { "zoom": 6 }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "displayType": "group",
+                            "groupId": "image-metadata",
+                            "tabId": "tab-metadata",
+                            "visibleWhen": { "binding": "$data#$.metadata.Content-Type", "startsWith": "image/" },
+                            "rows": [
+                                {
+                                    "columns": [
+                                        { "elements": [{ "type": "label", "value": "$data#$.metadata.Content-Type" }] },
+                                        { "elements": [{ "type": "label", "value": "$data#$.metadata.Content-Length" }] }
+                                    ]
+                                },
+                                {
+                                    "columns": [
+                                        { "elements": [{ "type": "label", "value": "$data#$.metadata.dimensions" }] },
+                                        { "elements": [{ "type": "label", "value": "$data#$.metadata.colorProfile" }] }
+                                    ]
+                                },
+                                {
+                                    "columns": [
+                                        { "elements": [{ "type": "label", "value": "$data#$.metadata.resolution" }] },
+                                        { "elements": [{ "type": "label", "value": "$data#$.metadata.language" }] }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "displayType": "group",
+                            "groupId": "document-metadata",
+                            "tabId": "tab-metadata",
+                            "visibleWhen": { "binding": "$data#$.metadata.Content-Type", "startsWith": "^application/" },
+                            "elements": [
+                                { "type": "label", "value": "$data#$.metadata['word-count']" },
+                                { "type": "label", "value": "$data#$.metadata['meta:page-count']" },
+                                { "type": "label", "value": "$data#$.metadata['meta:character-count']" },
+                                { "type": "label", "value": "$data#$.metadata['total-time']" },
+                                { "type": "label", "value": "$data#$.metadata['cp:revision']" },
+                                { "type": "label", "value": "$data#$.metadata['extended-properties:Company']" },
+                                { "type": "label", "value": "$data#$.metadata['meta:last-author']" },
+                                { "type": "label", "value": "$data#$.metadata.producer" },
+                                { "type": "label", "value": "$data#$.metadata['creator-tool']" }
+                            ]
+                        },
+                        {
+                            "displayType": "group",
+                            "groupId": "email-metadata",
+                            "tabId": "tab-metadata",
+                            "visibleWhen": { "binding": "$data#$.metadata.Content-Type", "startsWith": "message/" },
+                            "elements": [
+                                { "type": "label", "value": "$data#$.metadata['Message:From']" },
+                                { "type": "label", "value": "$data#$.metadata['Message:From-Name']" },
+                                { "type": "label", "value": "$data#$.metadata['Message-To']" },
+                                { "type": "label", "value": "$data#$.metadata['Message-Cc']" },
+                                { "type": "label", "value": "$data#$.metadata['Message:Raw-Header:Organization']" },
+                                { "type": "label", "value": "$data#$.metadata['Message:Raw-Header:Reply-to']" },
+                                { "type": "label", "value": "$data#$.metadata['Message:Raw-Header:X-Confirm-Reading-To']" },
+                                { "type": "label", "value": "$data#$.metadata['Content-Disposition']" }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    { upsert: true }
+);

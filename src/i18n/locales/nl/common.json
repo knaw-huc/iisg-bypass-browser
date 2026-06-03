@@ -27,6 +27,18 @@
   "panoptes.no": "Nee",
   "panoptes.mainSiteNavigation": "Hoofdnavigatie",
 
+  "iisg-bypass.pages.home": "Home",
+  "iisg-bypass.pages.search": "Zoeken",
+  "iisg-bypass.pages.datasets": "Datasets",
+  "iisg-bypass.pages.about": "Over",
+
+  "iisg-bypass.pages.home.institution": "Internationaal Instituut voor Sociale Geschiedenis",
+  "iisg-bypass.pages.home.title": "IISG Bypass Collecties",
+  "iisg-bypass.pages.home.description": "Verken gedigitaliseerde documenten varierend van arbeidsbewegingen, persoonlijke documenten, foto-collecties, orale geschiedenis en meer.",
+
+  "iisg-bypass.searchDataset": "Zoek",
+  "iisg-bypass.moreInfo": "Meer info",
+
   "screens.bypass-item-view": "Itemgegevens",
 
   "screens.bypass-item-view.actions.export-metadata": "Exporteer metadata",
