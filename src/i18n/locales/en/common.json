@@ -29,12 +29,27 @@
 
   "iisg-bypass.pages.home": "Home",
   "iisg-bypass.pages.search": "Search",
-  "iisg-bypass.pages.datasets": "Datasets",
+  "iisg-bypass.pages.datasets": "Collections",
   "iisg-bypass.pages.about": "About",
 
   "iisg-bypass.pages.home.institution": "International Institute of Social History",
   "iisg-bypass.pages.home.title": "IISG Bypass Collections",
   "iisg-bypass.pages.home.description": "Explore digitised holdings spanning labour movements, personal papers, photo collections, oral histories, and more.",
+
+  "iisg-bypass.pages.datasets.institution": "International Institute of Social History",
+  "iisg-bypass.pages.datasets.title": "Collections",
+  "iisg-bypass.pages.datasets.description": "Browse the bypass collections and search within each dataset.",
+
+  "iisg-bypass.pages.about.institution": "International Institute of Social History",
+  "iisg-bypass.pages.about.title": "About the Bypass Project",
+  "iisg-bypass.pages.about.background.title": "Background",
+  "iisg-bypass.pages.about.background.p1": "The Bypass Project was a pilot initiative conducted by the Collections Processing department at the International Institute of Social History (IISH). The institute set out to experiment with the development of a digital infrastructure capable of facilitating secure access to IISH's born digital archives in their raw, unprocessed state.",
+  "iisg-bypass.pages.about.background.p2": "With a non-operational born digital processing pipeline, unreliable structural and technical systems, and a catalogue with significant limitations in accessibility and discoverability, the project sought to develop an alternative access model — one that bypasses conventional archival workflows.",
+  "iisg-bypass.pages.about.approach.title": "The Project Approach",
+  "iisg-bypass.pages.about.approach.p1": "Informed by IISH researchers, a sample of unprocessed born digital archives was selected to serve as the basis for testing a processing pipeline developed by KNAW software developers. This pipeline utilizes forensic preservation tools and ElasticSearch to index the archives and construct a user interface incorporating file display functionality, in-text search, and metadata faceting.",
+  "iisg-bypass.pages.about.approach.p2": "A virtual research environment (KASM) was designated as the secure access mechanism for the pilot archives, with defined security and privacy controls required as a condition of access. Due to the sensitive nature of these collections and ongoing privacy policy developments, access is currently restricted to IISH employees.",
+  "iisg-bypass.pages.about.collections.title": "Bypass Collections",
+  "iisg-bypass.pages.about.collections.description": "Collections were selected based on their content, file type and level of sensitivity.",
 
   "iisg-bypass.searchDataset": "Search this dataset",
   "iisg-bypass.moreInfo": "More info",

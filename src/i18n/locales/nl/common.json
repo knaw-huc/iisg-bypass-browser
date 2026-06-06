@@ -29,12 +29,27 @@
 
   "iisg-bypass.pages.home": "Home",
   "iisg-bypass.pages.search": "Zoeken",
-  "iisg-bypass.pages.datasets": "Datasets",
+  "iisg-bypass.pages.datasets": "Collecties",
   "iisg-bypass.pages.about": "Over",
 
   "iisg-bypass.pages.home.institution": "Internationaal Instituut voor Sociale Geschiedenis",
   "iisg-bypass.pages.home.title": "IISG Bypass Collecties",
   "iisg-bypass.pages.home.description": "Verken gedigitaliseerde documenten varierend van arbeidsbewegingen, persoonlijke documenten, foto-collecties, orale geschiedenis en meer.",
+
+  "iisg-bypass.pages.datasets.institution": "Internationaal Instituut voor Sociale Geschiedenis",
+  "iisg-bypass.pages.datasets.title": "Collecties",
+  "iisg-bypass.pages.datasets.description": "Blader door de Bypass collecties en zoek binnen elke dataset.",
+
+  "iisg-bypass.pages.about.institution": "Internationaal Instituut voor Sociale Geschiedenis",
+  "iisg-bypass.pages.about.title": "Over het Bypass-project",
+  "iisg-bypass.pages.about.background.title": "Achtergrond",
+  "iisg-bypass.pages.about.background.p1": "Het Bypass-project was een pilotinitiatief van de afdeling Collectieverwerking van het Internationaal Instituut voor Sociale Geschiedenis (IISG). Het instituut wilde experimenteren met de ontwikkeling van een digitale infrastructuur die veilige toegang tot de digital born archieven van het IISG in hun ruwe, onbewerkte staat mogelijk maakt.",
+  "iisg-bypass.pages.about.background.p2": "Met een niet-operationele verwerkingspijplijn voor digital born materiaal, onbetrouwbare structurele en technische systemen, en een catalogus met aanzienlijke beperkingen in toegankelijkheid en vindbaarheid, zocht het project naar een alternatief toegangsmodel — een model dat conventionele archiefworkflows omzeilt.",
+  "iisg-bypass.pages.about.approach.title": "De projectaanpak",
+  "iisg-bypass.pages.about.approach.p1": "Op advies van IISG-onderzoekers werd een selectie van onbewerkte digital born archieven gekozen als basis voor het testen van een verwerkingspijplijn die is ontwikkeld door KNAW-softwareontwikkelaars. Deze pijplijn maakt gebruik van forensische preserveringstools en ElasticSearch om de archieven te indexeren en een gebruikersinterface op te bouwen met functionaliteit voor bestandsweergave, zoeken in tekst en het faceteren van metadata.",
+  "iisg-bypass.pages.about.approach.p2": "Een virtuele onderzoeksomgeving (KASM) werd aangewezen als het veilige toegangsmechanisme voor de pilotarchieven, met vastgestelde beveiligings- en privacymaatregelen als voorwaarde voor toegang. Vanwege de gevoelige aard van deze collecties en de lopende ontwikkelingen in het privacybeleid is de toegang momenteel beperkt tot medewerkers van het IISG.",
+  "iisg-bypass.pages.about.collections.title": "Bypass-collecties",
+  "iisg-bypass.pages.about.collections.description": "Collecties zijn geselecteerd op basis van hun inhoud, bestandstype en gevoeligheidsniveau.",
 
   "iisg-bypass.searchDataset": "Zoek",
   "iisg-bypass.moreInfo": "Meer info",

@@ -1,6 +1,5 @@
 import {createPanoptesRoot, PanoptesRouterProvider} from "@knaw-huc/panoptes-react";
 import {panoptesBlocksLibrary} from "@knaw-huc/panoptes-react-blocks";
-import ExportMetadataAction from "./components/actions/export-metadata/ExportMetadataAction.tsx";
 import {createTranslate} from "./i18n/i18n.ts";
 import Datasets from "./components/datasets/Datasets.tsx";
 import {createRoute} from "@tanstack/react-router";
@@ -22,8 +21,6 @@ const getVar = (envVariable: string): string | undefined =>
     envVariable.startsWith('$VITE_')
         ? (envVariable.slice(1) in import.meta.env ? import.meta.env[envVariable.slice(1)] : undefined)
         : envVariable;
-
-panoptesBlocksLibrary.set('export-metadata-action-button', ExportMetadataAction);
 
 const root = createPanoptesRoot(document.getElementById('root')!, {
     url: getVar(panoptesUrl),
@@ -53,6 +50,10 @@ const root = createPanoptesRoot(document.getElementById('root')!, {
             "label": "iisg-bypass-pages-about",
             "href": "/about",
             "labelKey": "iisg-bypass.pages.about"
+        },
+        {
+            "label": "{IISG}",
+            "href": "https://iisg.amsterdam"
         }
     ],
     routes: (rootRoute) => [
