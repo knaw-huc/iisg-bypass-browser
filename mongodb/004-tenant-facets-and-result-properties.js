@@ -22,9 +22,12 @@ for (const facet of facets) {
 tenantDb.result_properties.createIndex({ dataset_name: 1, order: 1 }, { unique: true });
 
 const resultProperties = [
-    { name: "id", path: "$.id", type: "number", order: 0 },
-    { name: "title", path: "$.metadata['title']", type: "text", order: 1 },
-    { name: "description", path: "$.metadata['description']", type: "text", order: 2 }
+    { name: "id", path: "$._id", type: "text", order: 0 },
+    { name: "title", path: "$.metadata['title', 'dc:title']", type: "text", order: 1 },
+    { name: "description", path: "$.metadata['description', 'dc:description']", type: "text", order: 2 },
+    { name: "filepath", path: "$.filepath", type: "text", order: 3 },
+    { name: "tags", path: "$.metadata['dc:subject']", type: "text", order: 4 },
+
 ];
 
 for (const prop of resultProperties) {
