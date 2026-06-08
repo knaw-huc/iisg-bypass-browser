@@ -1,9 +1,11 @@
 #!/bin/sh
-set -e
 
-for f in /usr/share/nginx/html/assets/*.js; do
-  envsubst '${VITE_PANOPTES_URL} ${VITE_PANOPTES_IS_EMBEDDED} ${VITE_PANOPTES_SEARCH_PATH} ${VITE_PANOPTES_DETAIL_PATH} ${VITE_PANOPTES_DATASET} ${VITE_PANOPTES_THEME}' \
-    < "$f" > /tmp/env_sub && mv /tmp/env_sub "$f"
+for file in /usr/share/nginx/html/assets/index*.js; do
+  if [ ! -f $file.tmpl.js ]; then
+    cp $file $file.tmpl.js
+  fi
+
+  envsubst '$VITE_PANOPTES_URL,$VITE_PANOPTES_IS_EMBEDDED,$VITE_PANOPTES_SEARCH_PATH,$VITE_PANOPTES_DETAIL_PATH,$VITE_PANOPTES_DATASET,$VITE_PANOPTES_THEME' <$file.tmpl.js >$file
 done
 
-exec nginx -g "daemon off;"
+nginx -g 'daemon off;'
