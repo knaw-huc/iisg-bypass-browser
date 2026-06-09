@@ -1,6 +1,5 @@
 import {createPanoptesRoot, PanoptesRouterProvider} from "@knaw-huc/panoptes-react";
 import {panoptesBlocksLibrary} from "@knaw-huc/panoptes-react-blocks";
-import ExportMetadataAction from "./components/actions/export-metadata/ExportMetadataAction.tsx";
 import {createTranslate} from "./i18n/i18n.ts";
 import Datasets from "./components/datasets/Datasets.tsx";
 import {createRoute} from "@tanstack/react-router";
@@ -11,6 +10,7 @@ import '@knaw-huc/panoptes-react/style.css';
 import '@knaw-huc/panoptes-react-blocks/style.css';
 import './css/theme.css';
 import './css/index.css';
+import BypassResultCard from "./components/results/BypassResultCard.tsx";
 
 const panoptesUrl = '$VITE_PANOPTES_URL';
 const panoptesIsEmbedded = '$VITE_PANOPTES_IS_EMBEDDED';
@@ -22,8 +22,6 @@ const getVar = (envVariable: string): string | undefined =>
     envVariable.startsWith('$VITE_')
         ? (envVariable.slice(1) in import.meta.env ? import.meta.env[envVariable.slice(1)] : undefined)
         : envVariable;
-
-panoptesBlocksLibrary.set('export-metadata-action-button', ExportMetadataAction);
 
 const root = createPanoptesRoot(document.getElementById('root')!, {
     url: getVar(panoptesUrl),
@@ -39,11 +37,11 @@ const root = createPanoptesRoot(document.getElementById('root')!, {
             "href": "/",
             "labelKey": "iisg-bypass.pages.home"
         },
-        {
+        /*{
             "label": "iisg-bypass-pages-search",
             "href": "/search",
             "labelKey": "iisg-bypass.pages.search"
-        },
+        }*/
         {
             "label": "iisg-bypass-pages-datasets",
             "href": "/datasets",
@@ -53,6 +51,10 @@ const root = createPanoptesRoot(document.getElementById('root')!, {
             "label": "iisg-bypass-pages-about",
             "href": "/about",
             "labelKey": "iisg-bypass.pages.about"
+        },
+        {
+            "label": "{IISG}",
+            "href": "https://iisg.amsterdam"
         }
     ],
     routes: (rootRoute) => [
@@ -77,6 +79,7 @@ const root = createPanoptesRoot(document.getElementById('root')!, {
             component: Search
         }),
     ],
-    branding: 'Bypass'
+    branding: 'Bypass',
+    resultCardRenderer: (result, link) => <BypassResultCard {...result} link={link}/>,
 });
 root.render(<PanoptesRouterProvider/>);

@@ -2,10 +2,7 @@ import classes from './Datasets.module.css';
 import {type DatasetConfiguration, useDatasets, usePanoptes} from "@knaw-huc/panoptes-react";
 
 interface BypassDatasetConfiguration extends DatasetConfiguration {
-    //type: string;
     description: string;
-    //item_count: string;
-    //period: string;
 }
 
 export default function Datasets() {
@@ -13,8 +10,15 @@ export default function Datasets() {
     const { translateFn } = usePanoptes();
 
     return (
-        <div className={classes.index}>
-            <ul className={classes.list}>
+        <div className={classes.page}>
+            <header className={classes.header}>
+                <p className={classes.eyebrow}>{translateFn && translateFn('iisg-bypass.pages.datasets.institution')}</p>
+                <h1 className={classes.pageTitle}>{translateFn && translateFn('iisg-bypass.pages.datasets.title')}</h1>
+            </header>
+
+            <div className={classes.content}>
+                <p className={classes.intro}>{translateFn && translateFn('iisg-bypass.pages.datasets.description')}</p>
+                <ul className={classes.list}>
                 {datasets.map(dataset => (
                     <li key={dataset.name} className={classes.card}>
                         <h2 className={classes.title}>{dataset.name}</h2>
@@ -52,7 +56,8 @@ export default function Datasets() {
                         </div>
                     </li>
                 ))}
-            </ul>
+                </ul>
+            </div>
         </div>
     );
 }
