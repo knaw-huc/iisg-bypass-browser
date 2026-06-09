@@ -1,8 +1,92 @@
 import classes from './About.module.css';
-import {useDatasets, usePanoptes} from "@knaw-huc/panoptes-react";
+import {usePanoptes} from "@knaw-huc/panoptes-react";
+
+const datasets = [
+    {
+        "name": "05-07-10-mapping",
+        "data_type": "elasticsearch",
+        "data_configuration": {
+            "id_property": "",
+            "base_url": "",
+            "description": "Test mapping 05-07-10",
+            "s3_endpoint": "https://minio-api.bypass.dev.diginfra.org",
+            "s3_key_id": "minio",
+            "s3_secret": "miniominio"
+        }
+    },
+    {
+        "name": "05-07-11-mapping",
+        "data_type": "elasticsearch",
+        "data_configuration": {
+            "id_property": "",
+            "base_url": "",
+            "description": "Test mapping 05-07-11"
+        }
+    },
+    {
+        "name": "05-07-12-mapping",
+        "data_type": "elasticsearch",
+        "data_configuration": {
+            "id_property": "",
+            "base_url": "",
+            "description": "Test mapping 05-07-12",
+            "s3_key_id": "key",
+            "s3_secret": "secret",
+            "s3_endpoint": "Endpoint"
+        }
+    },
+    {
+        "name": "papa-zuid",
+        "data_type": "elasticsearch",
+        "data_configuration": {
+            "id_property": "",
+            "base_url": "",
+            "description": "Participating Artists Press Agency (PAPA) in Amsterdam stadsdeel Zuid",
+            "s3_endpoint": "https://minio-api.bypass.dev.diginfra.org",
+            "s3_key_id": "minio",
+            "s3_secret": "miniominio"
+        }
+    },
+    {
+        "name": "pothoven",
+        "data_type": "elasticsearch",
+        "data_configuration": {
+            "id_property": "",
+            "base_url": "",
+            "description": "Pieter Paul Pothoven"
+        }
+    },
+    {
+        "name": "papa-zuidoost",
+        "data_type": "elasticsearch",
+        "data_configuration": {
+            "id_property": "",
+            "base_url": "",
+            "description": "Participating Artists Press Agency (PAPA) in Amsterdam stadsdeel Zuidoost"
+        }
+    },
+    {
+        "name": "fnv-vrouw",
+        "data_type": "elasticsearch",
+        "data_configuration": {
+            "id_property": "",
+            "base_url": "",
+            "description": "FNV Vrouw"
+        }
+    },
+    {
+        "name": "bypass-all",
+        "data_type": "elasticsearch",
+        "data_configuration": {
+            "id_property": "",
+            "base_url": "",
+            "description": "Bypass collections"
+        }
+    }
+];
 
 export default function About() {
-    const { data: datasets } = useDatasets();
+    //const { data: datasets } = useDatasets();
     const { translateFn } = usePanoptes();
 
     return (
