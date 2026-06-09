@@ -11,7 +11,7 @@ header [class*="_navigation_"] {
 }
 
 div [class*="_branding_"] {
-    background-color: #1E4A57;
+    background-color: #094870;
     align-self: stretch;            /* Full height */
     margin-block: -0.5rem;          /* Cancel vertical padding to reach top/bottom edges */
     padding-block: 0.5rem;          /* Restore inner spacing so the text stays centered */

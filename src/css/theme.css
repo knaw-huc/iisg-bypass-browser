@@ -1,10 +1,10 @@
 html {
-    --color-brand: #3d5a63;
-    --color-brand-500: #3d5a63;
+    --color-brand: #73a1bf;
+    --color-brand-500: #73a1bf;
     --color-header-text: #fff;
-    --color-support-001: #3d5a63;
-    --color-support-002: #d6e6df;
-    --color-support-003: #eef1ee;
+    --color-support-001: #73a1bf;
+    --color-support-002: #73a1bf;
+    --color-support-003: #73a1bf;
     --default-font-family: sans-serif;
     --content-max-width: 62rem;
 }

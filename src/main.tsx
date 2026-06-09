@@ -31,6 +31,7 @@ const root = createPanoptesRoot(document.getElementById('root')!, {
     dataset: getVar(panoptesDataset),
     translateFn: createTranslate(),
     blocks: panoptesBlocksLibrary,
+    theme: "iisg",
     navItems: [
         {
             "label": "iisg-bypass-pages-home",
