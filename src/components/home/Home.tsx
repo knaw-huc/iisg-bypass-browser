@@ -14,7 +14,13 @@ export default function Home() {
 
             <div className={classes.content}>
                 <p className={classes.description}>{translateFn && translateFn('iisg-bypass.pages.home.description')}</p>
+                <figure className={classes.figure}>
+                    <img className={classes.image} src='/ARRA.jpeg' width='320' height='200' alt="" />
+                    <figcaption className={classes.caption}>Meerendonk, Ben van, De eerste Nederlandse programmeerbare computer : de 'ARRA', Automatische Relais Rekenmachine Amsterdam in het Mathematisch Centrum, 1952)</figcaption>
+                </figure>
             </div>
+
+
         </div>
     );
 

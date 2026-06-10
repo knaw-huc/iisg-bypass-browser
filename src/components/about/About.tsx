@@ -1,8 +1,13 @@
 import classes from './About.module.css';
-import {useDatasets, usePanoptes} from "@knaw-huc/panoptes-react";
+import {type DatasetConfiguration, useDatasets, usePanoptes} from "@knaw-huc/panoptes-react";
+
+interface BypassDatasetConfiguration extends DatasetConfiguration {
+    title: string;
+    description: string;
+}
 
 export default function About() {
-    const { data: datasets } = useDatasets();
+    const { data: datasets } = useDatasets<BypassDatasetConfiguration>();
     const { translateFn } = usePanoptes();
 
     return (
@@ -30,7 +35,9 @@ export default function About() {
                     <p>{translateFn && translateFn('iisg-bypass.pages.about.collections.description')}</p>
                     <ul className={classes.datasetList}>
                         {datasets.map(dataset => (
-                            <li key={dataset.name} className={classes.datasetItem}>{dataset.name}</li>
+                            <li key={dataset.name} className={classes.datasetItem}>
+                                {dataset.data_configuration?.title ?? '-'}
+                            </li>
                         ))}
                     </ul>
                 </section>
