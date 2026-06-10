@@ -32,7 +32,7 @@ export default function About() {
                         <ul className={classes.datasetList}>
                             {datasets.map(dataset => (
                                 <li key={dataset.name} className={classes.datasetItem}>
-                                    {dataset.data_configuration?.title ?? '-'}
+                                    <span className={classes.datasetTitle}>{dataset.data_configuration?.title ?? '-'}</span>
                                 </li>
                             ))}
                         </ul>
