@@ -20,13 +20,13 @@ export default function Datasets() {
                     <ul className={classes.list}>
                         {datasets.map(dataset => (
                             <li key={dataset.name} className={classes.card}>
-                                <h2 className={classes.title}>{dataset.name}</h2>
+                                <h2 className={classes.title}>
+                                    {dataset.data_configuration?.title ?? '-'}
+                                </h2>
 
                                 <hr className={classes.divider} />
 
-                                {dataset.data_configuration.description && (
-                                    <p className={classes.description}>{dataset.data_configuration.description}</p>
-                                )}
+                                <p className={classes.description}>{dataset.data_configuration?.description ?? '-'}</p>
 
                                 <div className={classes.actions}>
                                     <a href={`${dataset.name}/search`}

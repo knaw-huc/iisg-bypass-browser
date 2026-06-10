@@ -79,6 +79,7 @@
     line-height: 1.4;
     margin: 0 1rem;
     color: var(--color-dataset-800);
+    overflow-wrap: anywhere;
 }
 
 .divider {
@@ -93,6 +94,7 @@
     line-height: 1.5;
     flex: 1;
     margin: 0 1rem;
+    overflow-wrap: anywhere;
 }
 
 .tag {
