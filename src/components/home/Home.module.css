@@ -1,11 +1,84 @@
 .page {
     background-color: #eef3f7;
-    min-height: 100vh;
+    min-height: calc(100vh - 3.5rem);
+    width: 100%;
+}
+
+.wrapper {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    gap: 2rem;
+    align-items: start;
+    background-color: #FCFCFC;
+    padding: 2rem;
+    margin-top: -10vh;
+}
+
+.heroCol {
+    min-width: 0;
+}
+
+.stats {
+    margin: 3rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.stat {
+    margin: 0;
+}
+
+.statLabel {
+    margin: 0;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #666;
+}
+
+.statValue {
+    margin: 0.25rem 0 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-header-text);
+}
+
+.heroImage {
+    min-width: 0;
+    margin: 0;
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.caption {
+    margin: 0.5rem 0 0;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
 }
 
 .header {
-    background-color: var(--color-brand);
-    padding: 2.5rem 1.5rem;
+    background-color: #ffffff;
+    color: var(--color-header-text);
+    min-height: 10vh;
 }
 
 .eyebrow {
@@ -14,25 +87,46 @@
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.85);
+    color: #666;
 }
 
-.title {
+.pageTitle {
     margin: 0;
     font-size: 2rem;
     font-weight: 700;
     color: var(--color-header-text);
 }
 
-.content {
-    max-width: var(--content-max-width);
-    margin: 0 auto;
-    padding: 2rem 1.5rem;
-}
-
-.description {
+.intro {
     margin: 0;
     font-size: 1rem;
     line-height: 1.6;
     color: #333;
+}
+
+.cta {
+    margin-top: 2.5rem;
+}
+
+.browseBtn {
+    padding: 0.45rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid #D0D0D0;
+    background: #F2F2F2;
+    color: #333;
+    text-decoration: none;
+}
+
+.browseBtn:hover {
+    background: var(--color-brand);
+    color: #fff;
+    border-color: var(--color-brand);
+}
+
+.browseBtn:focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
 }

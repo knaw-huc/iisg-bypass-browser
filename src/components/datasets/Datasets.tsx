@@ -95,12 +95,14 @@ export default function Datasets() {
     return (
         <div className={classes.page}>
             <header className={classes.header}>
-                <p className={classes.eyebrow}>{translateFn && translateFn('iisg-bypass.pages.datasets.institution')}</p>
-                <h1 className={classes.pageTitle}>{translateFn && translateFn('iisg-bypass.pages.datasets.title')}</h1>
-            </header>
-
+                <div className={classes.wrapper}>
+                    <h1 className={classes.pageTitle}>{translateFn && translateFn('iisg-bypass.pages.datasets.title')}</h1>
+                    <p className={classes.intro}>{translateFn && translateFn('iisg-bypass.pages.datasets.description')}</p>
+                </div>
+                </header>
             <div className={classes.content}>
-                <p className={classes.intro}>{translateFn && translateFn('iisg-bypass.pages.datasets.description')}</p>
+                <div className={classes.wrapper}>
+                
                 <ul className={classes.list}>
                 {datasets.map(dataset => (
                     <li key={dataset.name} className={classes.card}>
@@ -140,6 +142,8 @@ export default function Datasets() {
                     </li>
                 ))}
                 </ul>
+                </div>
+                
             </div>
         </div>
     );
