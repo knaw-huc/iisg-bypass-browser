@@ -122,7 +122,9 @@ export default function CollectionInfo() {
                             </p>
                             <p className={classes.value}>
                                 {datasetMetadata?.permanent_link ? <a className={classes.permanentLink}
-                                                                      href={datasetMetadata?.permanent_link ?? '#'}>
+                                                                      href={datasetMetadata?.permanent_link}
+                                                                      target='_blank'
+                                                                      rel='noreferrer noopener'>
                                                                         {datasetMetadata?.permanent_link}
                                                                    </a> : '—'}
                             </p>
