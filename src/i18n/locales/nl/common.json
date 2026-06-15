@@ -31,11 +31,28 @@
   "iisg-bypass.pages.search": "Zoeken",
   "iisg-bypass.pages.datasets": "Collecties",
   "iisg-bypass.pages.about": "Over",
+  "iisg-bypass.pages.aboutDataset": "Over de collectie",
+
+  "iisg-bypass.collectionInfo.tab.searchResult": "Zoekresultaten",
+  "iisg-bypass.collectionInfo.tab.dataset": "Collectie",
+
+  "iisg-bypass.collectionInfo.archiveCreator": "Archiefvormer",
+  "iisg-bypass.collectionInfo.summary": "Samenvatting",
+  "iisg-bypass.collectionInfo.period": "Periode",
+  "iisg-bypass.collectionInfo.size": "Omvang",
+  "iisg-bypass.collectionInfo.access": "Raadpleging",
+  "iisg-bypass.collectionInfo.digitalAvailability": "Digitale beschikbaarheid",
+  "iisg-bypass.collectionInfo.languageOfMaterial": "Taal materiaal",
+  "iisg-bypass.collectionInfo.collectionNumber": "Collectienummer",
+  "iisg-bypass.collectionInfo.storageLocation": "Bewaarplaats",
+  "iisg-bypass.collectionInfo.permanentLink": "Permanente link",
 
   "iisg-bypass.pages.home.institution": "Internationaal Instituut voor Sociale Geschiedenis",
   "iisg-bypass.pages.home.title": "IISG Bypass Collecties",
   "iisg-bypass.pages.home.description": "Verken gedigitaliseerde documenten varierend van arbeidsbewegingen, persoonlijke documenten, foto-collecties, orale geschiedenis en meer.",
   "iisg-bypass.pages.home.browseCollections": "Blader door de collecties",
+  "iisg-bypass.pages.home.datasets": "Collecties",
+  "iisg-bypass.pages.home.coverage": "Periode",
 
   "iisg-bypass.pages.datasets.institution": "Internationaal Instituut voor Sociale Geschiedenis",
   "iisg-bypass.pages.datasets.title": "Collecties",

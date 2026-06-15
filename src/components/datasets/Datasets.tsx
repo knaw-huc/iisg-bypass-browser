@@ -1,9 +1,11 @@
 import classes from './Datasets.module.css';
 import {useDatasets, usePanoptes} from "@knaw-huc/panoptes-react";
-import type {BypassDatasetConfiguration} from "../schema/types.ts";
+import {Link} from "@tanstack/react-router";
+import type {BypassDataset, BypassDatasetConfiguration} from "../schema/types.ts";
 
 export default function Datasets() {
-    const { data: datasets } = useDatasets<BypassDatasetConfiguration>();
+    const { data } = useDatasets<BypassDatasetConfiguration>();
+    const datasets = data as BypassDataset[];
     const { translateFn } = usePanoptes();
 
     return (
@@ -21,18 +23,22 @@ export default function Datasets() {
                         {datasets.map(dataset => (
                             <li key={dataset.name} className={classes.card}>
                                 <h2 className={classes.title}>
-                                    {dataset.data_configuration?.title ?? '-'}
+                                    {dataset.data_configuration?.title ?? '—'}
                                 </h2>
 
                                 <hr className={classes.divider} />
 
-                                <p className={classes.description}>{dataset.data_configuration?.description ?? '-'}</p>
+                                <p className={classes.description}>
+                                    {dataset.data_configuration?.description ?? '—'}
+                                </p>
 
                                 <div className={classes.actions}>
-                                    <a href={`${dataset.name}/search`}
-                                       className={classes.btn}>
+                                    <Link to="/$dataset/collection"
+                                          params={{dataset: dataset.name}}
+                                          state={{datasetMetadata: dataset.metadata}}
+                                          className={classes.btn}>
                                         {translateFn && translateFn('iisg-bypass.searchDataset')}
-                                    </a>
+                                    </Link>
                                 </div>
                             </li>
                         ))}

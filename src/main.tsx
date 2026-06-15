@@ -6,6 +6,7 @@ import {createRoute} from "@tanstack/react-router";
 import Home from "./components/home/Home.tsx";
 import About from "./components/about/About.tsx";
 import Search from "./components/search/Search.tsx";
+import CollectionInfo from "./components/collection/CollectionInfo.tsx";
 import '@knaw-huc/panoptes-react/style.css';
 import '@knaw-huc/panoptes-react-blocks/style.css';
 import './css/theme.css';
@@ -78,6 +79,11 @@ const root = createPanoptesRoot(document.getElementById('root')!, {
             path: '/search',
             getParentRoute: () => rootRoute,
             component: Search
+        }),
+        createRoute({
+            path: '$dataset/collection',
+            getParentRoute: () => rootRoute,
+            component: CollectionInfo
         }),
     ],
     branding: 'Bypass',

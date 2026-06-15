@@ -27,15 +27,19 @@ export default function Home() {
 
                     <dl className={classes.stats}>
                         <div className={classes.stat}>
-                            <dt className={classes.statLabel}>Collections</dt>
-                            <dd className={classes.statValue}>{datasets?.length ?? '-'}</dd>
+                            <dt className={classes.statLabel}>
+                                {translateFn && translateFn('iisg-bypass.pages.home.datasets')}
+                            </dt>
+                            <dd className={classes.statValue}>{datasets?.length ?? '—'}</dd>
                         </div>
                         {/*<div className={classes.stat}>
                             <dt className={classes.statLabel}>Items</dt>
                             <dd className={classes.statValue}>13.207</dd>
                         </div>*/}
                         <div className={classes.stat}>
-                            <dt className={classes.statLabel}>Coverage</dt>
+                            <dt className={classes.statLabel}>
+                                {translateFn && translateFn('iisg-bypass.pages.home.coverage')}
+                            </dt>
                             <dd className={classes.statValue}>1800s–2020s</dd>
                         </div>
                     </dl>

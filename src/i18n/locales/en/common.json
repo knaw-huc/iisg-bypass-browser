@@ -31,11 +31,28 @@
   "iisg-bypass.pages.search": "Search",
   "iisg-bypass.pages.datasets": "Collections",
   "iisg-bypass.pages.about": "About",
+  "iisg-bypass.pages.aboutDataset": "About the collection",
+
+  "iisg-bypass.collectionInfo.tab.searchResult": "Search result",
+  "iisg-bypass.collectionInfo.tab.dataset": "Collection",
+
+  "iisg-bypass.collectionInfo.archiveCreator": "Creator",
+  "iisg-bypass.collectionInfo.summary": "Summary",
+  "iisg-bypass.collectionInfo.period": "Period",
+  "iisg-bypass.collectionInfo.size": "Size",
+  "iisg-bypass.collectionInfo.access": "Access",
+  "iisg-bypass.collectionInfo.digitalAvailability": "Digital availability",
+  "iisg-bypass.collectionInfo.languageOfMaterial": "Language",
+  "iisg-bypass.collectionInfo.collectionNumber": "Collection number",
+  "iisg-bypass.collectionInfo.storageLocation": "Repository",
+  "iisg-bypass.collectionInfo.permanentLink": "Permanent link",
 
   "iisg-bypass.pages.home.institution": "International Institute of Social History",
   "iisg-bypass.pages.home.title": "IISG Bypass Collections",
   "iisg-bypass.pages.home.description": "Explore digitised holdings spanning labour movements, personal papers, photo collections, oral histories, and more.",
   "iisg-bypass.pages.home.browseCollections": "Browse the collections",
+  "iisg-bypass.pages.home.datasets": "Collections",
+  "iisg-bypass.pages.home.coverage": "Coverage",
 
   "iisg-bypass.pages.datasets.institution": "International Institute of Social History",
   "iisg-bypass.pages.datasets.title": "Collections",
