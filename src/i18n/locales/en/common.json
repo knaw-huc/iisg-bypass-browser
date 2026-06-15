@@ -44,7 +44,7 @@
   "iisg-bypass.collectionInfo.digitalAvailability": "Digital availability",
   "iisg-bypass.collectionInfo.languageOfMaterial": "Language",
   "iisg-bypass.collectionInfo.collectionNumber": "Collection number",
-  "iisg-bypass.collectionInfo.storageLocation": "Repository",
+  "iisg-bypass.collectionInfo.repository": "Repository",
   "iisg-bypass.collectionInfo.permanentLink": "Permanent link",
 
   "iisg-bypass.pages.home.institution": "International Institute of Social History",

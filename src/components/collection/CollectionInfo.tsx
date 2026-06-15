@@ -109,7 +109,7 @@ export default function CollectionInfo() {
 
                         <div>
                             <p className={classes.label}>
-                                {translateFn && translateFn('iisg-bypass.collectionInfo.storageLocation')}
+                                {translateFn && translateFn('iisg-bypass.collectionInfo.repository')}
                             </p>
                             <p className={classes.value}>
                                 {datasetMetadata?.repository ?? '—'}
@@ -121,10 +121,10 @@ export default function CollectionInfo() {
                                 {translateFn && translateFn('iisg-bypass.collectionInfo.permanentLink')}
                             </p>
                             <p className={classes.value}>
-                                <a className={classes.permanentLink}
-                                   href={datasetMetadata?.permanent_link}>
-                                    {datasetMetadata?.permanent_link}
-                                </a>
+                                {datasetMetadata?.permanent_link ? <a className={classes.permanentLink}
+                                                                      href={datasetMetadata?.permanent_link ?? '#'}>
+                                                                        {datasetMetadata?.permanent_link}
+                                                                   </a> : '—'}
                             </p>
                         </div>
                     </div>
