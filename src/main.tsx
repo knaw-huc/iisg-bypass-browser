@@ -6,11 +6,13 @@ import {createRoute} from "@tanstack/react-router";
 import Home from "./components/home/Home.tsx";
 import About from "./components/about/About.tsx";
 import Search from "./components/search/Search.tsx";
+import CollectionInfo from "./components/collection/CollectionInfo.tsx";
 import '@knaw-huc/panoptes-react/style.css';
 import '@knaw-huc/panoptes-react-blocks/style.css';
 import './css/theme.css';
 import './css/index.css';
 import BypassResultCard from "./components/results/BypassResultCard.tsx";
+import FilePreviewBlockRenderer from "./blocks/file-preview";
 
 const panoptesUrl = '$VITE_PANOPTES_URL';
 const panoptesIsEmbedded = '$VITE_PANOPTES_IS_EMBEDDED';
@@ -22,6 +24,8 @@ const getVar = (envVariable: string): string | undefined =>
     envVariable.startsWith('$VITE_')
         ? (envVariable.slice(1) in import.meta.env ? import.meta.env[envVariable.slice(1)] : undefined)
         : envVariable;
+
+panoptesBlocksLibrary.set('file-preview', FilePreviewBlockRenderer);
 
 const root = createPanoptesRoot(document.getElementById('root')!, {
     url: getVar(panoptesUrl),
@@ -78,6 +82,11 @@ const root = createPanoptesRoot(document.getElementById('root')!, {
             path: '/search',
             getParentRoute: () => rootRoute,
             component: Search
+        }),
+        createRoute({
+            path: '$dataset/collection',
+            getParentRoute: () => rootRoute,
+            component: CollectionInfo
         }),
     ],
     branding: 'Bypass',
