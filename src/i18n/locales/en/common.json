@@ -79,8 +79,10 @@
   "screens.bypass-item-view.summary.metadata.title.info": "",
   "screens.bypass-item-view.summary.filepath": "File path",
   "screens.bypass-item-view.summary.filepath.info": "",
-  "screens.bypass-item-view.summary.metadata.Content-Type": "Content type",
-  "screens.bypass-item-view.summary.metadata.Content-Type.info": "",
+  "screens.bypass-item-view.summary.avif.avif_url": "Preview",
+  "screens.bypass-item-view.summary.avif.avif_url.info": "",
+  "screens.bypass-item-view.summary.metadata.content-type": "Content type",
+  "screens.bypass-item-view.summary.metadata.content-type.info": "",
   "screens.bypass-item-view.summary.metadata.description": "Description",
   "screens.bypass-item-view.summary.metadata.description.info": ""
 }
